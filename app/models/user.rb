@@ -4,7 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-	has_secure_password
+	# has_secure_password
+	# had to comment above out so devise works: Rails NoMethodError: undefined method `password_digest=
 
 	before_save :downcase_email
 
