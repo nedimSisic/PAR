@@ -9,6 +9,5 @@ Rails.application.routes.draw do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  resources :users, only: [:show] # Devise takes care of others
 end
